@@ -55,7 +55,10 @@ export default function Home() {
       <div className="grid grid-cols-4  w-1/2 mb-20 ">
         {images.map((id) => {
           return (
-            <div className="p-5 rounded-lg m-2 flex justify-center items-center bg-neutral-900 hover:bg-neutral-800 ">
+            <div
+              key={id}
+              className="p-5 rounded-lg m-2 flex justify-center items-center bg-neutral-900 hover:bg-neutral-800 "
+            >
               <Image
                 src={`/images/image ${id}.png`}
                 alt="partners image"
