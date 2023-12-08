@@ -1,3 +1,10 @@
+## Screenshot of UI
+![image](https://github.com/Gourav-Chouhan/Fanpay-UI/assets/77933683/f1c35387-f014-4227-9014-92f7d65ca1c9)
+![image](https://github.com/Gourav-Chouhan/Fanpay-UI/assets/77933683/640d9765-c58a-4d25-ada0-d8c4a7d0cc1f)
+![image](https://github.com/Gourav-Chouhan/Fanpay-UI/assets/77933683/4a5ef181-880f-4343-a240-36222fbd09fb)
+![image](https://github.com/Gourav-Chouhan/Fanpay-UI/assets/77933683/1cee5510-bdea-4e07-b74f-2a4eff0d25f3)
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
