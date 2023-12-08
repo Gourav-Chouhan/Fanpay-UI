@@ -1,113 +1,226 @@
-import Image from 'next/image'
+import Navbar from "@/components/Navbar";
+import Image from "next/image";
+
+const ratingContainer =
+  "flex flex-col p-4 px-6 items-center justify-around bg-neutral-900 rounded-lg";
+const ratingText = "text-xl m-0";
+const smallText = "text-xs m-0 text-neutral-600";
 
 export default function Home() {
+  const images = [29, 30, 31, 32, 33, 34, 35, 36];
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className="flex min-h-screen flex-col flex-start items-center px-10 font-popins ">
+      <Navbar />
+
+      {/* Main page */}
+      <div className="flex flex-row justify-center items-center w-full mb-20 ">
+        <div className="flex justify-end w-1/2 hover:scale-110  ease-out transition-transform">
+          <Image
+            src="/images/visaCard.png"
+            alt="card image"
+            width={700}
+            height={150}
+          />
+        </div>
+        <div className="flex flex-col flex-start  h-full w-1/2">
+          <h1 className="text-5xl w-1/2 p-1 leading-[3.5rem] mb-3">
+            Personalised UPI and card for teens
+          </h1>
+          <div className="text-xl w-[40%] p-1 font-medium mb-4">
+            Lörem ipsum androception migt. Plalonde van supraktig. Rer rens i
+          </div>
+          <div className="flex gap-5 mb-8">
+            <button className="px-12 py-2 font-semibold bg-amber-500 rounded-full">
+              Get Now
+            </button>
+            <button className="px-12 py-2 font-semibold border rounded-full">
+              Learn More
+            </button>
+          </div>
+          <div className="flex gap-6">
+            <div className={ratingContainer}>
+              <div className={ratingText}>4.4 ratings</div>
+              <div className={smallText}>on google play store</div>
+            </div>
+            <div className={ratingContainer}>
+              <div className={ratingText}>10M+Downloder</div>
+              <div className={smallText}>on google play store</div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      {/* We trust page  section */}
+      <div className="text-center m-10 text-4xl">We Are Trusted By</div>
+      <div className="grid grid-cols-4  w-1/2 mb-20 ">
+        {images.map((id) => {
+          return (
+            <div className="p-5 rounded-lg m-2 flex justify-center items-center bg-neutral-900 hover:bg-neutral-800 ">
+              <Image
+                src={`/images/image ${id}.png`}
+                alt="partners image"
+                width={150}
+                height={150}
+              />
+            </div>
+          );
+        })}
+      </div>
+      {/* about fanpay section */}
+      <div className="flex flex-row justify-center items-center w-full my-20 ">
+        <div className="flex justify-end w-1/2 hover:scale-110  ease-out transition-transform">
+          <Image
+            src="/images/visaCard.png"
+            alt="card image"
+            width={700}
+            height={150}
+          />
+        </div>
+        <div className="flex flex-col flex-start  h-full w-1/2">
+          <div className="w-1/2">
+            <h1 className="text-3xl w-1/2 p-1 leading-[3.5rem] ml-5 mb-2 text-amber-500">
+              Fampay
+            </h1>
+            <div className="flex flex-row items-center mb-2">
+              <div className="round-bullet "></div>
+              <div className="text-xl">
+                Tap & Pay with your personalised card
+              </div>
+            </div>
+            <div className="flex flex-row items-center mb-2">
+              <div className="round-bullet "></div>
+              <div className="text-xl">
+                A numberless card that keeps all your info secure
+              </div>
+            </div>
+            <div className="flex flex-row items-center mb-2">
+              <div className="round-bullet "></div>
+              <div className="text-xl">
+                Design your own card with a customised name and doodles
+              </div>
+            </div>
+            <div className="flex flex-row items-center mb-2">
+              <div className="round-bullet "></div>
+              <div className="text-xl">
+                Super safe card that you can block or pause anytime
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+      {/* get your own api section */}
+      <div className="flex flex-row justify-center items-center w-full mb-20 ">
+        <div className="flex justify-end w-1/2  pr-20">
+          <Image
+            src="/images/image 37.png"
+            alt="card image"
+            width={380}
+            height={150}
+          />
+        </div>
+        <div className="flex flex-col flex-start  h-full w-1/2">
+          <h1 className="text-5xl w-2/3 p-1 leading-[3.5rem] mb-3">
+            Your own UPI to make super fast payments
+          </h1>
+          <div className="text-xl w-[70%] p-1 font-medium mb-4 flex flex-col gap-4 mt-4">
+            <div className="flex flex-row items-center">
+              <Image
+                src="/images/tick.svg"
+                width={30}
+                height={100}
+                alt="tick mark"
+                className="mt-2 mr-2"
+              />
+              <div>Scan & Pay with your customised UPI ID</div>
+            </div>
+            <div className="flex flex-row items-center">
+              <Image
+                src="/images/tick.svg"
+                width={30}
+                height={100}
+                alt="tick mark"
+                className="mt-2 mr-2"
+              />
+              <div>Choose personalised QR themes to match your style</div>
+            </div>
+            <div className="flex flex-row items-center">
+              <Image
+                src="/images/tick.svg"
+                width={30}
+                height={100}
+                alt="tick mark"
+                className="mt-2 mr-2"
+              />
+              <div>Recharge, pay bills, shop online, and more</div>
+            </div>
+          </div>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+          <div className="flex gap-5 mb-8">
+            <button className="px-12 py-2 my-4 font-semibold bg-amber-500 rounded-full">
+              Get Your Own UPI
+            </button>
+          </div>
+        </div>
+      </div>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+      {/* earn reward section */}
+      <div className="flex flex-row justify-center items-center w-full my-36 ">
+        <div className="flex justify-end w-1/2  pr-20">
+          <Image
+            src="/images/image 38.png"
+            alt="card image"
+            width={380}
+            height={150}
+          />
+        </div>
+        <div className="flex flex-col flex-start  h-full w-1/2 ">
+          <h1 className="text-5xl w-2/3 p-1 leading-[3.5rem] mb-3">
+            Earn unlimited rewards
+          </h1>
+          <div className="text-xl w-[55%] p-1 font-medium mb-4 flex flex-col gap-6 ">
+            <div>
+              Win infinite cashbacks, discounts, and offers on your favourite
+              brands
+            </div>
+            <div className="flex flex-row text-base font-semibold bg-neutral-900 p-4 rounded-lg w-[80%]">
+              <div className="ml-2 mr-4 self-center">
+                <Image
+                  src="/images/image 39.png"
+                  width={60}
+                  height={40}
+                  alt="icons"
+                />
+              </div>
+              <div>Rewards every time you spend with FamPay</div>
+            </div>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+            <div className="flex flex-row text-base font-semibold bg-neutral-900 p-4 rounded-lg w-[80%]">
+              <div className="ml-2 mr-4 self-center">
+                <Image
+                  src="/images/image 40.png"
+                  width={60}
+                  height={40}
+                  alt="icons"
+                />
+              </div>
+              <div>Exclusive giveaways of PS5, AirPods, iPhone, and more</div>
+            </div>
+
+            <div className="flex flex-row text-base font-semibold bg-neutral-900 p-4 rounded-lg w-[80%]">
+              <div className="ml-2 mr-4 self-center">
+                <Image
+                  src="/images/image 41.png"
+                  width={60}
+                  height={40}
+                  alt="icons"
+                />
+              </div>
+              <div>Challenges that help you save more and earn more</div>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
-  )
+  );
 }
